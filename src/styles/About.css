@@ -1,0 +1,42 @@
+.about {
+    padding: 4rem 2rem;
+    background-color: var(--bg-primary);
+    color: #fff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.about-image img {
+    width: 350px;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 600px;
+    font-family: 'Winky Sans', sans-serif;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--red);
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+strong {
+    color: var(--red);
+    font-weight: bold;
+}
