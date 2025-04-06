@@ -25,8 +25,8 @@ function Navbar() {
                 <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
                     <li><NavLink to="/" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Início</NavLink></li>
                     <li><NavLink to="/About" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Sobre</NavLink></li>
-                    <li><a href="#" onClick={() => setMenuOpen(false)}>Contato</a></li>
-                    <li><a href="#" onClick={() => setMenuOpen(false)}>Projetos</a></li>
+                    <li><NavLink to="/Contact" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Contato</NavLink></li>
+                    <li><NavLink to="/Projects" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Projetos</NavLink></li>
                 </ul>
             </div>
         </nav>

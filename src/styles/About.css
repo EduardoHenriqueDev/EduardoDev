@@ -27,7 +27,6 @@
 .about-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--red);
 }
 
 .about-content p {
@@ -39,4 +38,15 @@
 strong {
     color: var(--red);
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 1rem 2rem;
+    }
+
+    .about-image {
+        display: none;
+    }
 }
