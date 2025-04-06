@@ -60,10 +60,11 @@ function Projects() {
                         </div>
                         <h3>E-Commerce</h3>
                         <div className="tech-badges">
-                            <span className="badge">PHP</span>
-                            <span className="badge">JavaScript</span>
+                            <span className="badge">React.js</span>
+                            <span className="badge">TypeScript</span>
                             <span className="badge">CSS</span>
-                            <span className="badge">SQL</span>
+                            <span className="badge">Java</span>
+                            <span className="badge">Spring-Boot</span>
                         </div>
                         <div className="project-links">
                             <a href="https://github.com/EduardoHenriqueDev/frontend_estoque_ecomerce.git" target="_blank" rel="noopener noreferrer">
