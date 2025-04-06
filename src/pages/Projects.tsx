@@ -66,7 +66,7 @@ function Projects() {
                             <span className="badge">SQL</span>
                         </div>
                         <div className="project-links">
-                            <a href="https://github.com/EduardoHenriqueDev/TCC-DAYBYDAY.git" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/EduardoHenriqueDev/frontend_estoque_ecomerce.git" target="_blank" rel="noopener noreferrer">
                                 <FaGithub className='icon' /> GitHub
                             </a>
                         </div>
