@@ -1,0 +1,36 @@
+:root {
+  --bg-main: #121212;
+  --bg-secondary: #1E1E1E;
+  --red: #B71C1C;
+  --red-hover: #E53935;
+  --text-main: #E0E0E0;
+  --text-muted: #A0A0A0;
+  --border: #333333;
+}
+
+@font-face {
+  font-family: 'Winky Sans';
+  src: url('./assets/fonts/WinkySans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background-color: var(--bg-main);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

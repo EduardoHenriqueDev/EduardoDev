@@ -1,0 +1,92 @@
+.home {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 3rem 2rem;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Winky Sans', sans-serif;
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: white;
+}
+
+.description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: var(--red);
+    font-weight: bold;
+}
+
+.formation {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon {
+    color: var(--red);
+}
+
+.skills-section {
+    margin-top: 2rem;
+}
+
+.skills-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tech-icon {
+    font-size: 4rem;
+    transition: transform 0.5s ease, color 0.3s ease-in-out;
+}
+
+.tech-icon:hover {
+    transform: scale(1.1);
+    color: var(--red);
+    transition: transform 0.3s ease, color 0.3s ease-in-out;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+}
