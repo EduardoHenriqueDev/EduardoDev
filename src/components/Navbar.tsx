@@ -32,7 +32,7 @@ function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                 >
-                    <img src={logo} alt="Logo" className="logo-img" />
+                    <NavLink to="/"><img src={logo} alt="Logo" className="logo-img" /></NavLink>
                 </motion.div>
 
                 <div className="menu-icon" onClick={toggleMenu}>
