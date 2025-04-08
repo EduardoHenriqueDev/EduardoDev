@@ -1,10 +1,15 @@
 import '../styles/About.css'
 import codingImage from '../assets/img/coding.png'
+import { motion } from 'framer-motion';
 
 function About() {
     return (
         <section className="about">
-            <div className="about-container">
+            <motion.div className="about-container"
+                initial={{ opacity: 0, y: 80, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 1, ease: "backOut" }}
+            >
                 <div className="about-image">
                     <img src={codingImage} alt="Programação" />
                 </div>
@@ -21,7 +26,7 @@ function About() {
                         Tenho experiência com <strong>React</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong> e outras ferramentas modernas do ecossistema JavaScript.
                     </p>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }

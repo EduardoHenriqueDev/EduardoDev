@@ -6,11 +6,16 @@ import fitPilot2 from '../assets/img/projects/dashboard_fitpilot2.png';
 import daybyday1 from '../assets/img/projects/daybyday.png'
 import daybyday2 from '../assets/img/projects/daybyday2.png'
 import ecomerce from '../assets/img/projects/ecomerce.png'
+import { motion } from 'framer-motion';
 
 function Projects() {
     return (
         <section className="projects">
-            <div className="projects-container">
+            <motion.div className="projects-container"
+                initial={{ opacity: 0, y: 80, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 1, ease: "backOut" }}
+            >
                 <h2>Meus <strong>Projetos</strong></h2>
                 <div className="projects-grid">
                     <div className="project-card">
@@ -73,7 +78,7 @@ function Projects() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }

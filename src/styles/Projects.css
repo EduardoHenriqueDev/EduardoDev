@@ -1,6 +1,6 @@
 .projects {
     background-color: var(--bg-primary);
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     color: #fff;
     text-align: center;
     font-family: 'Winky Sans', sans-serif;
@@ -26,6 +26,14 @@
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .project-card img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .projects {
+        padding: 1rem 2rem;
+    }
 }
 
 .project-card {
@@ -45,12 +53,6 @@
     height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .project-card img {
-        aspect-ratio: 4 / 3;
-    }
 }
 
 .project-card h3 {

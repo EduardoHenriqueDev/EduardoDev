@@ -1,11 +1,16 @@
 import '../styles/Contact.css'
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
 import { SiGmail } from "react-icons/si";
+import { motion } from 'framer-motion';
 
 function Contact() {
     return (
         <section className="contact">
-            <div className="contact-container">
+            <motion.div className="contact-container"
+                initial={{ opacity: 0, y: 80, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 1, ease: "backOut" }}
+            >
                 <h2>Entre em <strong>Contato</strong></h2>
                 <p>Se você quiser bater um papo, colaborar ou tiver alguma dúvida, estou <strong>disponível</strong> nos canais abaixo:</p>
 
@@ -30,7 +35,7 @@ function Contact() {
                         <span>GitHub</span>
                     </a>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }
