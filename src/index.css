@@ -6,11 +6,21 @@
   --text-main: #E0E0E0;
   --text-muted: #A0A0A0;
   --border: #333333;
+
+  --font-title: 'Capitol City', sans-serif;
+  --font-text: 'Roboto', sans-serif;
 }
 
 @font-face {
-  font-family: 'Winky Sans';
-  src: url('./assets/fonts/WinkySans-Regular.ttf') format('truetype');
+  font-family: 'Capitol City';
+  src: url('./assets/fonts/capitol_city/capitolcity.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,12 +35,44 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: sans-serif;
+  font-family: var(--font-text);
   background-color: var(--bg-main);
+  color: var(--text-main);
 }
 
 #root {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: normal;
+  color: var(--text-main);
+}
+
+p,
+span,
+li,
+a,
+input,
+button {
+  font-family: var(--font-text);
+  color: var(--text-main);
+}
+
+::selection {
+  background-color: var(--red);
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: var(--red);
+  color: #fff;
 }

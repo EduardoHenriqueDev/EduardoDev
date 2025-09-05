@@ -230,3 +230,33 @@ strong {
 .slider-btn.right {
     right: 10px;
 }
+
+.project-image-hover {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image-hover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+.project-image-hover .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.project-image-hover:hover .hover-img {
+    opacity: 1;
+}
+
+.project-image-hover:hover .default-img {
+    opacity: 0;
+}

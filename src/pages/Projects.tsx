@@ -8,7 +8,9 @@ import daybyday1 from '../assets/img/projects/daybyday.png';
 import daybyday2 from '../assets/img/projects/daybyday2.png';
 import ecomerce from '../assets/img/projects/ecomerce.png';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import Socials from '../components/Socials';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 type Project = {
     id: number;
@@ -54,6 +56,7 @@ const projectsData: Project[] = [
 ];
 
 function Projects() {
+    const { t } = useContext(LanguageContext);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [currentImage, setCurrentImage] = useState(0);
 
@@ -65,18 +68,22 @@ function Projects() {
 
     return (
         <section className="projects">
+            <Socials />
+
             <motion.div className="projects-container"
                 initial={{ opacity: 0, y: 80, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1, ease: "backOut" }}
             >
-                <h2>Meus <strong>Projetos</strong></h2>
+                <h2>{t.projectsTitle}</h2>
                 <div className="projects-grid">
                     {projectsData.map(project => (
                         <div key={project.id} className="project-card" onClick={() => setSelectedProject(project)}>
                             <div className="project-image-hover">
                                 <img src={project.images[0]} alt={project.title} className="default-img" />
-                                {project.images[1] && <img src={project.images[1]} alt={`${project.title} Hover`} className="hover-img" />}
+                                {project.images[1] && (
+                                    <img src={project.images[1]} alt={`${project.title} Hover`} className="hover-img" />
+                                )}
                             </div>
                             <h3>{project.title}</h3>
                             <div className="tech-badges">
@@ -87,11 +94,11 @@ function Projects() {
                             <div className="project-links">
                                 {project.links.site && (
                                     <a href={project.links.site} target="_blank" rel="noopener noreferrer">
-                                        <GrDeploy className='icon' /> Ver Site
+                                        <GrDeploy className='icon' /> {t.viewSite}
                                     </a>
                                 )}
                                 <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                                    <FaGithub className='icon' /> GitHub
+                                    <FaGithub className='icon' /> {t.github}
                                 </a>
                             </div>
                         </div>
@@ -99,6 +106,7 @@ function Projects() {
                 </div>
             </motion.div>
 
+            {/* Modal */}
             <AnimatePresence>
                 {selectedProject && (
                     <motion.div
@@ -117,33 +125,7 @@ function Projects() {
                             onClick={e => e.stopPropagation()}
                         >
                             <h2>{selectedProject.title}</h2>
-                            <div className="modal-slider">
-                                <motion.img
-                                    key={selectedProject.images[currentImage]}
-                                    src={selectedProject.images[currentImage]}
-                                    alt={selectedProject.title}
-                                    initial={{ opacity: 0, x: 100 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -100 }}
-                                    transition={{ duration: 0.4 }}
-                                />
-                                {selectedProject.images.length > 1 && (
-                                    <>
-                                        <button className="slider-btn left" onClick={() => setCurrentImage((prev) => prev === 0 ? selectedProject.images.length - 1 : prev - 1)}>
-                                            ‹
-                                        </button>
-                                        <button className="slider-btn right" onClick={() => setCurrentImage((prev) => (prev + 1) % selectedProject.images.length)}>
-                                            ›
-                                        </button>
-                                    </>
-                                )}
-                            </div>
-
-                            <div className="tech-badges">
-                                {selectedProject.techs.map((tech, i) => (
-                                    <span key={i} className="badge">{tech}</span>
-                                ))}
-                            </div>
+                            {/* slider e tech badges */}
                             <button className="close-btn" onClick={() => setSelectedProject(null)}>
                                 <FiX size={24} />
                             </button>
@@ -152,7 +134,7 @@ function Projects() {
                 )}
             </AnimatePresence>
         </section>
-    )
+    );
 }
 
 export default Projects;
