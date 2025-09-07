@@ -2,15 +2,16 @@ import '../styles/Projects.css';
 import { GrDeploy } from "react-icons/gr";
 import { FaGithub } from "react-icons/fa";
 import { FiX } from 'react-icons/fi';
-import fitPilot1 from '../assets/img/projects/dashboard_fitpilot1.png';
-import fitPilot2 from '../assets/img/projects/dashboard_fitpilot2.png';
-import daybyday1 from '../assets/img/projects/daybyday.png';
-import daybyday2 from '../assets/img/projects/daybyday2.png';
+import fitPilot from '../assets/img/projects/dashboard_fitpilot2.png';
+import daybyday from '../assets/img/projects/daybyday.png';
+import glv from '../assets/img/projects/glv.png';
 import ecomerce from '../assets/img/projects/ecomerce.png';
+import delivery from '../assets/img/projects/delivery.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useContext } from 'react';
 import Socials from '../components/Socials';
 import { LanguageContext } from '../contexts/LanguageContext';
+import ProjectModal from "../components/ProjectModal";
 
 type Project = {
     id: number;
@@ -28,7 +29,7 @@ const projectsData: Project[] = [
     {
         id: 1,
         title: "FitPilot Dashboard",
-        images: [fitPilot1, fitPilot2],
+        images: [fitPilot],
         techs: ["HTML", "CSS", "JavaScript", "Firebase"],
         links: {
             site: "https://dashboard-fitpilot.vercel.app/pages/login.html",
@@ -38,7 +39,7 @@ const projectsData: Project[] = [
     {
         id: 2,
         title: "DayByDay",
-        images: [daybyday1, daybyday2],
+        images: [daybyday],
         techs: ["PHP", "JavaScript", "CSS", "SQL"],
         links: {
             github: "https://github.com/EduardoHenriqueDev/TCC-DAYBYDAY.git"
@@ -51,6 +52,38 @@ const projectsData: Project[] = [
         techs: ["React.js", "TypeScript", "CSS", "Java", "Spring-Boot"],
         links: {
             github: "https://github.com/EduardoHenriqueDev/frontend_estoque_ecomerce.git"
+        }
+    },
+    {
+        id: 4,
+        title: "GLV Informática e Desenvolvimento",
+        images: [glv],
+        techs: ["React", "TypeScript", "TailwindCSS", "Next.js"],
+        links: {
+            site: "https://www.glvinformatica.com.br/",
+            github: "https://github.com/devcauagalvao/siteglv.git"
+        }
+    },
+    {
+        id: 5,
+        title: "Delivery",
+        images: [delivery],
+        techs: [
+            "Next.js",
+            "TypeScript",
+            "TailwindCSS",
+            "Supabase",
+            "Framer Motion",
+            "Leaflet",
+            "OpenStreetMap",
+            "React Hook Form",
+            "Zod",
+            "Vitest",
+            "Testing Library"
+        ],
+        links: {
+            site: "https://delivery-lake.vercel.app/",
+            github: "https://github.com/devcauagalvao/delivery.git"
         }
     }
 ];
@@ -75,7 +108,7 @@ function Projects() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1, ease: "backOut" }}
             >
-                <h2>{t.projectsTitle}</h2>
+                <h2 dangerouslySetInnerHTML={{ __html: t.projectsTitle }} />
                 <div className="projects-grid">
                     {projectsData.map(project => (
                         <div key={project.id} className="project-card" onClick={() => setSelectedProject(project)}>
@@ -87,9 +120,12 @@ function Projects() {
                             </div>
                             <h3>{project.title}</h3>
                             <div className="tech-badges">
-                                {project.techs.map((tech, index) => (
+                                {project.techs.slice(0, 4).map((tech, index) => (
                                     <span key={index} className="badge">{tech}</span>
                                 ))}
+                                {project.techs.length > 4 && (
+                                    <span style={{ marginLeft: 8, fontWeight: 500 }}>mais ...</span>
+                                )}
                             </div>
                             <div className="project-links">
                                 {project.links.site && (
@@ -109,30 +145,14 @@ function Projects() {
             {/* Modal */}
             <AnimatePresence>
                 {selectedProject && (
-                    <motion.div
-                        className="modal-overlay"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setSelectedProject(null)}
-                    >
-                        <motion.div
-                            className="modal-content"
-                            initial={{ y: 100, opacity: 0, scale: 0.9 }}
-                            animate={{ y: 0, opacity: 1, scale: 1 }}
-                            exit={{ y: 50, opacity: 0, scale: 0.8 }}
-                            transition={{ duration: 0.4, ease: "easeOut" }}
-                            onClick={e => e.stopPropagation()}
-                        >
-                            <h2>{selectedProject.title}</h2>
-                            {/* slider e tech badges */}
-                            <button className="close-btn" onClick={() => setSelectedProject(null)}>
-                                <FiX size={24} />
-                            </button>
-                        </motion.div>
-                    </motion.div>
+                    <ProjectModal
+                        project={selectedProject}
+                        onClose={() => setSelectedProject(null)}
+                        t={t}
+                    />
                 )}
             </AnimatePresence>
+
         </section>
     );
 }

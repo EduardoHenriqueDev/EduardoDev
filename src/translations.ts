@@ -56,7 +56,7 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
         },
 
         // About.ts
-        aboutTitle: "Sobre <strong>Mim</strong>...",
+        aboutTitle: "Sobre <strong>Mim...</strong>",
         aboutParagraph1:
             "Meu nome é <strong>Eduardo Henrique</strong>, moro na cidade de <strong>Itu, SP - Brasil</strong>. Sou um desenvolvedor apaixonado por transformar ideias em experiências digitais. Com foco em desenvolvimento web e mobile, busco constantemente aprender novas tecnologias e aplicar soluções criativas em cada projeto.",
         aboutParagraph2:
@@ -65,7 +65,7 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
             "Tenho experiência com <strong>React</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong> e outras ferramentas modernas do ecossistema JavaScript.",
 
         // Projects.ts
-        projectsTitle: "Meus Projetos",
+        projectsTitle: "Meus <strong>Projetos</strong>",
         viewSite: "Ver Site",
         github: "GitHub",
     },
@@ -107,7 +107,7 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
             "I have experience with <strong>React</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong> and other modern tools in the JavaScript ecosystem.",
 
         // Projects.ts
-        projectsTitle: "My Projects",
+        projectsTitle: "My <strong>Projects</strong>",
         viewSite: "View Site",
         github: "GitHub",
     },
