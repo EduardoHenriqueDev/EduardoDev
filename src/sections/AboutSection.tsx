@@ -5,7 +5,7 @@ import codingImage from "../assets/img/coding.png";
 import { motion } from "framer-motion";
 import Socials from "../components/Socials";
 
-function About() {
+function AboutSection() {
     const { t } = useContext(LanguageContext);
 
     return (
@@ -39,4 +39,4 @@ function About() {
     );
 }
 
-export default About;
+export default AboutSection;
