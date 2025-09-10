@@ -5,6 +5,7 @@ import Socials from '../components/Socials';
 import HeroSection from "../sections/HeroSection";
 import AboutSection from "../sections/AboutSection";
 import CompetenciesSection from "../sections/CompetenciesSection";
+import Footer from "../components/Footer";
 
 function Home() {
     const { t } = useContext(LanguageContext);
@@ -15,6 +16,7 @@ function Home() {
             <HeroSection />
             <CompetenciesSection />
             <AboutSection />
+            <Footer />
         </section>
     );
 }

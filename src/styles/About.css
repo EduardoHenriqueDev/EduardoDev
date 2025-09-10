@@ -2,6 +2,27 @@ body, html {
     overflow-x: hidden;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 12px;
+    background: var(--bg-primary);
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: var(--red);
+    border-radius: 6px;
+    border: 2px solid var(--bg-primary);
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: var(--bg-secondary, #222);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) var(--bg-primary);
+}
+
 .about {
     padding: 3rem 2rem;
     background-color: var(--bg-primary);
@@ -18,11 +39,25 @@ body, html {
     flex-wrap: wrap;
 }
 
+.about-image {
+    flex: 0 0 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 420px;
+    min-width: 200px;
+}
+
 .about-image img {
     width: 100%;
-    max-width: 250px;
+    max-width: 420px;
+    min-width: 140px;
     height: auto;
     border-radius: 0.5rem;
+    object-fit: contain;
+    aspect-ratio: unset;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
 
 
@@ -48,6 +83,20 @@ strong {
     font-weight: bold;
 }
 
+@media (max-width: 1024px) {
+    .about-container {
+        gap: 3rem;
+    }
+    .about-image {
+        max-width: 180px;
+        min-width: 100px;
+    }
+    .about-image img {
+        max-width: 180px;
+        min-width: 80px;
+    }
+}
+
 @media (max-width: 768px) {
     .about {
         padding: 1rem 2rem;
@@ -55,5 +104,9 @@ strong {
 
     .about-image {
         display: none;
+    }
+
+    .about-container {
+        gap: 1.5rem;
     }
 }

@@ -1,7 +1,8 @@
 :root {
     --bg-main: #121212;
     --bg-secondary: #1E1E1E;
-    --red: #2563eb; /* Azul escuro vibrante */
+    --red: #2563eb;
+    /* Azul escuro vibrante */
     --red-hover: #60a5fa;
     --text-main: #E0E0E0;
     --text-muted: #A0A0A0;
@@ -28,7 +29,10 @@
 .home {
     background-color: var(--bg-main);
     color: var(--text-main);
-    padding: 3rem 2rem;
+    padding-top: 3rem;
+    padding-right: 2rem;
+    padding-bottom: 0rem;
+    padding-left: 2rem;
     min-height: calc(100vh - 160px);
     display: flex;
     flex-direction: column;
@@ -52,7 +56,7 @@
     }
 }
 
-.home > * {
+.home>* {
     width: 100%;
     max-width: 1200px;
 }
@@ -98,7 +102,12 @@
     color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: var(--text-main);
@@ -185,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
     width: auto;
     min-width: unset;
     max-width: 60px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .social-icon {
@@ -209,47 +218,52 @@ h1, h2, h3, h4, h5, h6 {
 
 /* HeroSection responsivo exceto mobile */
 @media (min-width: 769px) {
-  .home-container {
-    flex-wrap: nowrap;
-    gap: 2rem;
-  }
-  .hero-content {
-    flex: 2;
-    min-width: 250px;
-    max-width: 700px;
-  }
-  .hero-image {
-    flex: 1;
-    min-width: 200px;
-    max-width: 350px;
-  }
+    .home-container {
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        flex: 2;
+        min-width: 250px;
+        max-width: 700px;
+    }
+
+    .hero-image {
+        flex: 1;
+        min-width: 200px;
+        max-width: 350px;
+    }
 }
 
 @media (max-width: 768px) {
-  .home-container {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+    .home-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
 
 .scroll-down-arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.5rem;
-  font-size: 2.5rem;
-  color: var(--red);
-  animation: bounceDown 1.5s infinite;
-  filter: drop-shadow(0 2px 8px rgba(37,99,235,0.18));
-  cursor: pointer;
-  z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--red);
+    animation: bounceDown 1.5s infinite;
+    filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.18));
+    cursor: pointer;
+    z-index: 10;
 }
 
 @keyframes bounceDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(18px);
-  }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(18px);
+    }
 }
