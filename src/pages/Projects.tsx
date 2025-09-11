@@ -1,17 +1,16 @@
 import '../styles/Projects.css';
 import { GrDeploy } from "react-icons/gr";
 import { FaGithub } from "react-icons/fa";
-import { FiX } from 'react-icons/fi';
-import fitPilot from '../assets/img/projects/dashboard_fitpilot2.png';
-import daybyday from '../assets/img/projects/daybyday.png';
-import glv from '../assets/img/projects/glv.png';
-import ecomerce from '../assets/img/projects/ecomerce.png';
-import delivery from '../assets/img/projects/delivery.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useContext } from 'react';
 import Socials from '../components/Socials';
 import { LanguageContext } from '../contexts/LanguageContext';
 import ProjectModal from "../components/ProjectModal";
+import fitPilot from '../assets/img/projects/dashboard_fitpilot2.png';
+import daybyday from '../assets/img/projects/daybyday.png';
+import glv from '../assets/img/projects/glv.png';
+import ecomerce from '../assets/img/projects/ecomerce.png';
+import delivery from '../assets/img/projects/delivery.png';
 
 type Project = {
     id: number;
@@ -91,11 +90,10 @@ const projectsData: Project[] = [
 function Projects() {
     const { t } = useContext(LanguageContext);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    const [currentImage, setCurrentImage] = useState(0);
 
     useEffect(() => {
         if (selectedProject) {
-            setCurrentImage(0);
+            // setCurrentImage(0);
         }
     }, [selectedProject]);
 

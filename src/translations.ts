@@ -58,7 +58,7 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
             nextjs: "Next.js",
             vite: "Vite",
             node: "Node.js",
-            springboot: "Spring Boot",
+            tailwind: "Tailwind CSS",
             firebase: "Firebase",
             supabase: "Supabase",
             vercel: "Vercel",
@@ -135,13 +135,13 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
             nextjs: "Next.js",
             vite: "Vite",
             node: "Node.js",
-            springboot: "Spring Boot",
+            tailwind: "Tailwind CSS",
             firebase: "Firebase",
             supabase: "Supabase",
             vercel: "Vercel",
             github: "GitHub",
             vscode: "VS Code",
-            
+
         },
 
         // About.ts

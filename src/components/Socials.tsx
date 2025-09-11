@@ -1,10 +1,9 @@
-import React, { FC } from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import '../styles/Home.css';
 
-const Socials: FC = () => {
+const Socials = () => {
     const socials = [
         { icon: <FaGithub />, url: 'https://github.com/EduardoHenriqueDev', name: 'GitHub' },
         { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/eduardo-henrique-14584128b/', name: 'LinkedIn' },
