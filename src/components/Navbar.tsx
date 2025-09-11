@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { LanguageContext } from '../contexts/LanguageContext';
+import Socials from './Socials';
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -32,21 +33,22 @@ function Navbar() {
                     <NavLink to="/"><img src={logo} alt="Logo" className="logo-img" /></NavLink>
                 </motion.div>
 
-                {/* Desktop links */}
+                {/* Desktop links + Socials agrupados */}
                 {isDesktop ? (
-                    <motion.ul
-                        className="navbar-links"
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-                    >
-                        <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>{language === 'pt' ? 'Início' : 'Home'}</NavLink></li>
-                        <li><NavLink to="/About" className={({ isActive }) => isActive ? 'active' : ''}>{language === 'pt' ? 'Sobre' : 'About'}</NavLink></li>
-                        <li><NavLink to="/Projects" className={({ isActive }) => isActive ? 'active' : ''}>{language === 'pt' ? 'Projetos' : 'Projects'}</NavLink></li>
-                        <li>
-                            <button onClick={toggleLanguage} className="language-switch">{language === 'pt' ? 'EN' : 'PT'}</button>
-                        </li>
-                    </motion.ul>
+                    <div className="navbar-right-group">
+                        <motion.ul
+                            className="navbar-links"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+                        >
+                            <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>{language === 'pt' ? 'Início' : 'Home'}</NavLink></li>
+                            <li><NavLink to="/About" className={({ isActive }) => isActive ? 'active' : ''}>{language === 'pt' ? 'Sobre' : 'About'}</NavLink></li>
+                            <li><NavLink to="/Projects" className={({ isActive }) => isActive ? 'active' : ''}>{language === 'pt' ? 'Projetos' : 'Projects'}</NavLink></li>
+                        </motion.ul>
+                        <Socials />
+                        <button onClick={toggleLanguage} className="language-switch">{language === 'pt' ? 'EN' : 'PT'}</button>
+                    </div>
                 ) : (
                     <div className="mobile-menu-controls">
                         <button onClick={toggleLanguage} className="language-switch">{language === 'pt' ? 'EN' : 'PT'}</button>

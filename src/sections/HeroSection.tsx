@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { LanguageContext } from '../contexts/LanguageContext';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import icon from '../assets/img/profile.jpeg';
 import { FaCheckCircle, FaClock, FaReact, FaNode, FaArrowDown } from 'react-icons/fa';
 import { RiSupabaseLine, RiTailwindCssFill } from "react-icons/ri";
@@ -9,12 +9,16 @@ import { IoLogoFirebase } from "react-icons/io5";
 
 function HeroSection() {
     const { t } = useContext(LanguageContext);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
         <>
-            <motion.div className="home-container"
+            <motion.div
+                ref={ref}
+                className="home-container"
                 initial={{ opacity: 0, y: 80, scale: 0.8 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 1, ease: "backOut" }}
             >
                 <div className="hero-content">

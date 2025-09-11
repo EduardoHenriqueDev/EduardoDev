@@ -13,30 +13,44 @@
     transition: all 0.3s ease;
 }
 
-/* Container da navbar */
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 0;
 }
 
-/* Logo */
 .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    margin-right: auto;
 }
 
 .logo-img {
-    height: 50px;
+    height: 38px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    display: block;
 }
 
-/* Links */
+.navbar-right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.1rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navbar-links li {
+    position: relative;
 }
 
 .navbar-links li a {
@@ -44,27 +58,31 @@
     text-decoration: none;
     font-size: 1.5rem;
     transition: color 0.2s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-links li a.active,
+.navbar-links li a:hover {
+    color: var(--red);
 }
 
 .navbar-links li a::after {
+    display: none;
+}
+
+.navbar::after {
     content: '';
+    display: block;
     position: absolute;
-    bottom: -4px;
     left: 0;
-    width: 0;
+    right: 0;
+    bottom: 0;
     height: 5px;
-    border-radius: 30px;
-    background-color: var(--red);
-    transition: width 0.3s ease-in-out;
-}
-
-.navbar-links li a:hover::after,
-.navbar-links li a.active::after {
-    width: 100%;
-}
-
-.navbar-links li a.active {
-    color: var(--red);
+    background: var(--red);
+    border-radius: 0 0 12px 12px;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .menu-icon {
@@ -80,7 +98,6 @@
     gap: 20px;
 }
 
-/* Botão de idioma */
 .language-switch {
     padding: 6px 12px;
     border-radius: 6px;
@@ -96,7 +113,6 @@
     background-color: var(--red-hover);
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .mobile-menu-controls {
         display: flex;

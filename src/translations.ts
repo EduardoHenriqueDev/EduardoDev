@@ -69,11 +69,11 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
         // About.ts
         aboutTitle: "Sobre <strong>mim...</strong>",
         aboutParagraph1:
-            "Meu nome é <strong>Eduardo Henrique</strong>, moro na cidade de <strong>Itu, SP - Brasil</strong>. Sou um desenvolvedor apaixonado por transformar ideias em experiências digitais. Com foco em desenvolvimento web e mobile, busco constantemente aprender novas tecnologias e aplicar soluções criativas em cada projeto.",
+            "Sou <strong>Eduardo Henrique</strong>, desenvolvedor Full Stack e Mobile de <strong>Itu, SP</strong>. Minha paixão é criar soluções digitais modernas, combinando design, tecnologia e experiência do usuário.",
         aboutParagraph2:
-            "Sou formado <strong>Técnico em Desenvolvimento de Sistemas</strong> pela <strong>ETEC Martinho Di Ciero</strong>, e atualmente curso <strong>Análise e Desenvolvimento de Sistemas</strong> na <strong>FATEC Dom Amaury Castanho</strong>, ambas localizadas em Itu.",
+            "Com formação técnica e superior em desenvolvimento de sistemas, atuo desde a concepção visual até a implementação de sistemas completos, sempre buscando inovação e excelência.",
         aboutParagraph3:
-            "Tenho experiência com <strong>React</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong> e outras ferramentas modernas do ecossistema JavaScript.",
+            "Tenho experiência sólida com <strong>React</strong>, <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, <strong>Firebase</strong> e outras tecnologias de ponta. Meu foco é entregar produtos escaláveis, performáticos e com interfaces incríveis.",
 
         // Projects.ts
         projectsTitle: "Meus <strong>Projetos</strong>",

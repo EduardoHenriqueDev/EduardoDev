@@ -1,6 +1,7 @@
 import Navbar from './Navbar'
 import { ReactNode } from 'react'
 import '../styles/Layout.css'
+import '../styles/Socials.css'
 
 type LayoutProps = {
     children: ReactNode

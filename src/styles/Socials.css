@@ -1,0 +1,38 @@
+.socials-floating-bar {
+    position: static;
+    top: unset;
+    right: unset;
+    z-index: 1;
+    display: flex;
+    gap: 10px;
+    background: transparent;
+    border-radius: 32px;
+    box-shadow: none;
+    padding: 0;
+    align-items: center;
+    transition: none;
+    backdrop-filter: none;
+}
+
+.socials-floating-bar:hover {
+    background: none;
+}
+
+.socials-floating-bar .social-icon {
+    color: #fff;
+    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials-floating-bar .social-icon:hover {
+    color: #fff;
+    transform: scale(1.18) rotate(-8deg);
+}
+
+@media (max-width: 768px) {
+    .socials-floating-bar {
+        display: none;
+    }
+}
