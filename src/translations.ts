@@ -25,6 +25,21 @@ export type TranslationsProjects = {
     github: string;
 };
 
+export type LaunchedProjectItem = {
+    name: string;
+    description: string;
+    techs: string[];
+    image: string;
+    url: string;
+};
+
+export type TranslationsLaunchedProjects = {
+    launchedProjectsTitle: string;
+    launchedProjectsSubtitle: string;
+    launchedSeeAll: string;
+    launchedProjectsList: LaunchedProjectItem[];
+};
+
 export type HabilidadeItem = {
     icon: string; // nome do ícone, para mapear depois
     label: string;
@@ -36,7 +51,12 @@ export type TranslationsHabilidades = {
     habilidades: HabilidadeItem[];
 };
 
-export type LanguageTranslations = TranslationsHome & TranslationsAbout & TranslationsProjects & TranslationsHabilidades;
+export type LanguageTranslations =
+    TranslationsHome &
+    TranslationsAbout &
+    TranslationsProjects &
+    TranslationsHabilidades &
+    TranslationsLaunchedProjects;
 
 export const translations: Record<'pt' | 'en', LanguageTranslations> = {
     pt: {
@@ -69,11 +89,11 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
         // About.ts
         aboutTitle: "Sobre <strong>mim...</strong>",
         aboutParagraph1:
-            "Sou <strong>Eduardo Henrique</strong>, desenvolvedor Full Stack e Mobile de <strong>Itu, SP</strong>. Minha paixão é criar soluções digitais modernas, combinando design, tecnologia e experiência do usuário.",
+            "Sou <strong>Eduardo Henrique</strong>, desenvolvedor <strong>Full Stack</strong> e <strong>Mobile</strong> de <strong>Itu, SP</strong>. Minha paixão é criar soluções digitais modernas, unindo <strong>design</strong>, <strong>tecnologia</strong> e <strong>experiência do usuário</strong>.",
         aboutParagraph2:
-            "Com formação técnica e superior em desenvolvimento de sistemas, atuo desde a concepção visual até a implementação de sistemas completos, sempre buscando inovação e excelência.",
+            "Com formação <strong>técnica</strong> e <strong>superior</strong> em <strong>Desenvolvimento de Sistemas</strong>, atuo desde a concepção visual até a implementação de sistemas completos, sempre buscando <strong>inovação</strong> e <strong>excelência</strong>.",
         aboutParagraph3:
-            "Tenho experiência sólida com <strong>React</strong>, <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, <strong>Firebase</strong> e outras tecnologias de ponta. Meu foco é entregar produtos escaláveis, performáticos e com interfaces incríveis.",
+            "Tenho experiência sólida com <strong>React</strong>, <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, <strong>Firebase</strong> e outras tecnologias de ponta. Já realizei alguns projetos como <strong>freelancer</strong>, o que me permitiu desenvolver habilidades práticas em diferentes contextos. Atualmente, estou em busca da minha <strong>primeira oportunidade profissional</strong> na área, onde poderei aplicar meus conhecimentos, aprender continuamente e contribuir com soluções de alto impacto.",
 
         // Projects.ts
         projectsTitle: "Meus <strong>Projetos</strong>",
@@ -114,6 +134,34 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
                 desc: "Foco em experiência do usuário e design de interfaces intuitivas, acessíveis e agradáveis.",
             },
         ],
+
+        // LaunchedProjects.ts
+        launchedProjectsTitle: 'Projetos <strong>Lançados</strong>',
+        launchedProjectsSubtitle: '// clique para abrir',
+        launchedSeeAll: 'Ver todos os projetos',
+        launchedProjectsList: [
+            {
+                name: 'GLV Informática',
+                description: 'Site institucional moderno para empresa de tecnologia, com React, Next.js e Tailwind.',
+                techs: ['React', 'TypeScript', 'TailwindCSS', 'Next.js'],
+                image: 'glv',
+                url: 'https://www.glvinformatica.com.br/',
+            },
+            {
+                name: 'Taurus Black Burger',
+                description: 'Plataforma de delivery com mapa, autenticação e integração com Supabase.',
+                techs: [
+                    'Next.js',
+                    'TypeScript',
+                    'TailwindCSS',
+                    'Supabase',
+                    'Framer Motion',
+                    'OpenStreetMap',
+                ],
+                image: 'delivery',
+                url: 'https://delivery-lake.vercel.app/',
+            },
+        ],
     },
 
     en: {
@@ -147,11 +195,11 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
         // About.ts
         aboutTitle: "About <strong>me...</strong>",
         aboutParagraph1:
-            "My name is <strong>Eduardo Henrique</strong>, I live in <strong>Itu, SP - Brazil</strong>. I am a developer passionate about turning ideas into digital experiences. Focusing on web and mobile development, I constantly seek to learn new technologies and apply creative solutions in each project.",
+            "I am <strong>Eduardo Henrique</strong>, a <strong>Full Stack</strong> and <strong>Mobile</strong> developer from <strong>Itu, SP - Brazil</strong>. My passion is to create modern digital solutions, combining <strong>design</strong>, <strong>technology</strong>, and <strong>user experience</strong>.",
         aboutParagraph2:
-            "I graduated as a <strong>Systems Development Technician</strong> at <strong>ETEC Martinho Di Ciero</strong>, and I am currently studying <strong>Analysis and Systems Development</strong> at <strong>FATEC Dom Amaury Castanho</strong>, both located in Itu.",
+            "With a <strong>technical</strong> and <strong>higher education</strong> background in <strong>Systems Development</strong>, I work from visual conception to the implementation of complete systems, always seeking <strong>innovation</strong> and <strong>excellence</strong>.",
         aboutParagraph3:
-            "I have experience with <strong>React</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong> and other modern tools in the JavaScript ecosystem.",
+            "I have solid experience with <strong>React</strong>, <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, <strong>Firebase</strong>, and other cutting-edge technologies. I have already completed some projects as a <strong>freelancer</strong>, which allowed me to develop practical skills in different contexts. I am currently looking for my <strong>first professional opportunity</strong> in the field, where I can apply my knowledge, keep learning, and contribute with high-impact solutions.",
 
         // Projects.ts
         projectsTitle: "My <strong>Projects</strong>",
@@ -190,6 +238,34 @@ export const translations: Record<'pt' | 'en', LanguageTranslations> = {
                 icon: "FaUserFriends",
                 label: "UX/UI",
                 desc: "Focus on user experience and design of intuitive, accessible, and pleasant interfaces.",
+            },
+        ],
+
+        // LaunchedProjects.ts
+        launchedProjectsTitle: 'Launched <strong>Projects</strong>',
+        launchedProjectsSubtitle: '// click to open',
+        launchedSeeAll: 'See all projects',
+        launchedProjectsList: [
+            {
+                name: 'GLV Informática',
+                description: 'Modern institutional website for a tech company, built with React, Next.js and Tailwind.',
+                techs: ['React', 'TypeScript', 'TailwindCSS', 'Next.js'],
+                image: 'glv',
+                url: 'https://www.glvinformatica.com.br/',
+            },
+            {
+                name: 'Taurus Black Burger',
+                description: 'Delivery platform with map, authentication and Supabase integration.',
+                techs: [
+                    'Next.js',
+                    'TypeScript',
+                    'TailwindCSS',
+                    'Supabase',
+                    'Framer Motion',
+                    'OpenStreetMap',
+                ],
+                image: 'delivery',
+                url: 'https://delivery-lake.vercel.app/',
             },
         ],
     },
